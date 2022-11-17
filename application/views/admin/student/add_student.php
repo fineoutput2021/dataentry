@@ -36,16 +36,54 @@
 
                             <div class="panel-body">
                                 <div class="col-lg-10">
-                                   <form action="<?php echo base_url() ?>admin/category/add_major_data/<? echo base64_encode(1); ?>" method="POST" id="slide_frm" enctype="multipart/form-data">
+                                   <form action="<?php echo base_url() ?>dcadmin/student/add_student_data/<? echo base64_encode(1); ?>" method="POST" id="slide_frm" enctype="multipart/form-data">
                                 <div class="table-responsive">
                                     <table class="table table-hover">
 
 											<tr>
-                                                <td> <strong>Name</strong>  <span style="color:red;">*</span></strong> </td>
+                                                <td> <strong>Full Name</strong>  <span style="color:red;">*</span></strong> </td>
                                                 <td>
-													<input type="text" name="name"  class="form-control" placeholder="" required value="" />
+													<input type="text" name="fname"  class="form-control" placeholder="" required value="" />
 	                                            </td>
     										</tr>
+
+                        <tr>
+                                                  <td> <strong>Email</strong>  <span style="color:red;">*</span></strong> </td>
+                                                  <td>
+                            <input type="email" name="mail"  class="form-control" placeholder="" required value="" />
+                                                </td>
+                          </tr>
+
+                          <tr>
+                                                    <td> <strong>Phone Number</strong>  <span style="color:red;">*</span></strong> </td>
+                                                    <td>
+                              <input type="number" name="phone"  class="form-control" placeholder="" required value="" />
+                                                  </td>
+                            </tr>
+
+                            <tr>
+                                                      <td> <strong>City</strong>  <span style="color:red;">*</span></strong> </td>
+                                                      <td>
+                                <input type="text" name="city"  class="form-control" placeholder="" required value="" />
+                                                    </td>
+                              </tr>
+
+                              <tr>
+                                                        <td> <strong>State</strong>  <span style="color:red;">*</span></strong> </td>
+                                                        <td>
+                                  <input type="text" name="state"  class="form-control" placeholder="" required value="" />
+                                                      </td>
+                                </tr>
+
+
+                                <tr>
+                                                          <td> <strong>country</strong>  <span style="color:red;">*</span></strong> </td>
+                                                          <td>
+                                    <input type="text" name="country"  class="form-control" placeholder="" required value="" />
+                                                        </td>
+                                  </tr>
+
+
                         	<tr>
     												<td colspan="2" >
     													<input type="submit" class="btn btn-success" value="save">
