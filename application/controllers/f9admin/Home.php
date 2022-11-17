@@ -20,14 +20,28 @@ function __construct()
 				// echo SITE_NAME;
 
 				$this->db->select('*');
-				$this->db->from('tbl_admin_sidebar');
+				$this->db->from('tbl_assignment');
 				// $this->db->where('student_shift',$cvf);
-				$data['sidebar_data']= $this->db->get();
+				$a= $this->db->count_all_results();
+
+
+				$data['team']=$a;
 
 				// echo $this->session->userdata('image');
 				// echo $this->session->userdata('position');
 			// exit;
+			
+
+
+
+			      			$this->db->select('*');
+			$this->db->from('tbl_team');
+			//$this->db->where('id',$usr);
+			$data['']= $this->db->get();
+
+
 			$this->load->view('admin/common/header_view',$data);
+
 				$this->load->view('admin/dash');
 				$this->load->view('admin/common/footer_view');
 
