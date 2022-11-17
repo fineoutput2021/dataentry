@@ -5,7 +5,7 @@
           </h1>
           <ol class="breadcrumb">
            <li><a href="<?php echo base_url() ?>admin/dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="<?php echo base_url() ?>admin/college"><i class="fa fa-dashboard"></i> All Team </a></li>
+            <li><a href="<?php echo base_url() ?>admin/college"><i class="fa fa-dashboard"></i> All student </a></li>
 
           </ol>
         </section>
@@ -41,25 +41,43 @@
                                     <table class="table table-hover">
 
 											<tr>
-                                                <td> <strong>Full Name</strong>  <span style="color:red;">*</span></strong> </td>
+                                                <td> <strong>First_name </strong>  <span style="color:red;">*</span></strong> </td>
                                                 <td>
-													<input type="text" name="fname"  class="form-control" placeholder="" required value="<?=$student->full_name ?>" />
+													<input type="text" name="first_name"  class="form-control" placeholder="" required value="<?=$student->first_name ?>" />
 	                                            </td>
     										</tr>
+                        <tr>
+                                                  <td> <strong>Last_name</strong>  <span style="color:red;">*</span></strong> </td>
+                                                  <td>
+  													<input type="text" name="last_name"  class="form-control" placeholder="" required value="<?=$student->last_name ?>" />
+  	                                            </td>
+      										</tr>
+                          <tr>
+                                                    <td> <strong>Fathers_name</strong>  <span style="color:red;">*</span></strong> </td>
+                                                    <td>
+    													<input type="text" name="fathers_name"  class="form-control" placeholder="" required value="<?=$student->fathers_name ?>" />
+    	                                            </td>
+        										</tr>
 
                         <tr>
                                                   <td> <strong>Email</strong>  <span style="color:red;">*</span></strong> </td>
                                                   <td>
-                            <input type="email" name="mail"  class="form-control" placeholder="" required value="<?=$student->email ?>" />
+                            <input type="email" name="email"  class="form-control" placeholder="" required value="<?=$student->email ?>" />
                                                 </td>
                           </tr>
 
                           <tr>
                                                     <td> <strong>Phone Number</strong>  <span style="color:red;">*</span></strong> </td>
                                                     <td>
-                              <input type="number" name="phone"  class="form-control" placeholder="" required value="<?=$student->phone_number ?>" />
+                              <input type="number" name="phone_number"  class="form-control" placeholder="" required value="<?=$student->phone_number ?>" />
                                                   </td>
                             </tr>
+                            <tr>
+                                                      <td> <strong>Address</strong>  <span style="color:red;">*</span></strong> </td>
+                                                      <td>
+      													<input type="text" name="address"  class="form-control" placeholder="" required value="<?=$student->address ?>" />
+      	                                            </td>
+          										</tr>
 
                             <tr>
                                                       <td> <strong>City</strong>  <span style="color:red;">*</span></strong> </td>

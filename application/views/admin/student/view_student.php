@@ -5,8 +5,8 @@ Student
 </h1>
 <ol class="breadcrumb">
 <li><a href="<?php echo base_url() ?>admin/dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
-<li><a href="<?php echo base_url() ?>admin/college"><i class="fa fa-dashboard"></i> All Team </a></li>
-<li class="active">View Team</li>
+<li><a href="<?php echo base_url() ?>admin/college"><i class="fa fa-dashboard"></i> All student </a></li>
+<li class="active">View student</li>
 </ol>
 </section>
 <section class="content">
@@ -15,7 +15,7 @@ Student
 <a class="btn btn-info cticket" href="<?php echo base_url() ?>dcadmin/student/add_student" role="button" style="margin-bottom:12px;"> Add Student</a>
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h3 class="panel-title"><i class="fa fa-money fa-fw"></i>View team</h3>
+            <h3 class="panel-title"><i class="fa fa-money fa-fw"></i>View student</h3>
         </div>
            <div class="panel panel-default">
 
@@ -41,9 +41,12 @@ Student
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Full Name</th>
+                        <th>Student Name</th>
+                            <th>Last_name</th>
+                          <th>Fathers-name</th>
                         <th>Email</th>
                         <th>Phone Number</th>
+                          <th>Address</th>
                         <th>City</th>
                         <th>State</th>
                         <th>Country</th>
@@ -55,9 +58,12 @@ Student
                       	<?php $i=1; foreach($student_data->result() as $data) { ?>
 <tr>
   <td><?php echo $i ?> </td>
-  <td><?php echo $data->full_name ?></td>
+  <td><?php echo $data->first_name ?></td>
+  <td><?php echo $data->last_name ?></td>
+  <td><?php echo $data->fathers_name ?></td>
   <td><?php echo $data->email ?></td>
   <td><?php echo $data->phone_number ?></td>
+  <td><?php echo $data->address ?></td>
   <td><?php echo $data->city ?></td>
   <td><?php echo $data->state ?></td>
   <td><?php echo $data->country ?></td>

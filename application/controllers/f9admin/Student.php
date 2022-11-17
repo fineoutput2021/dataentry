@@ -2,16 +2,14 @@
 require_once(APPPATH . 'core/CI_finecontrol.php');
 class Student extends CI_finecontrol{
 function __construct()
+		{
+			parent::__construct();
+			$this->load->model("login_model");
+			$this->load->model("admin/base_model");
+			$this->load->library('user_agent');
+		}
 
-{
-parent::__construct();
-$this->load->model("login_model");
-$this->load->model("admin/base_model");
-$this->load->library('user_agent');
-$this->load->library('upload');
-}
 
-//   view funcation
 public function view_student(){
 
 
@@ -234,10 +232,6 @@ public function update_student($idd){
                    $this->load->view('admin/student/update_student');
                    $this->load->view('admin/common/footer_view');
 
-               }
-               else{
-
-                  redirect("login/admin_login","refresh");
                }
 
                }
