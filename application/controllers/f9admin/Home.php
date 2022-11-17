@@ -20,7 +20,7 @@ function __construct()
 				// echo SITE_NAME;
 
 				$this->db->select('*');
-				$this->db->from('tbl_admin_sidebar');
+				$this->db->from('tbl_assignment');
 				// $this->db->where('student_shift',$cvf);
 				$a= $this->db->count_all_results();
 
@@ -30,6 +30,10 @@ function __construct()
 				// echo $this->session->userdata('image');
 				// echo $this->session->userdata('position');
 			// exit;
+			
+
+
+
 			      			$this->db->select('*');
 			$this->db->from('tbl_team');
 			//$this->db->where('id',$usr);
