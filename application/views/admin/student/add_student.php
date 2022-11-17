@@ -1,11 +1,11 @@
 <div class="content-wrapper">
         <section class="content-header">
            <h1>
-          Add New Team
+          Add New student
           </h1>
           <ol class="breadcrumb">
            <li><a href="<?php echo base_url() ?>admin/dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="<?php echo base_url() ?>admin/college"><i class="fa fa-dashboard"></i> All Team </a></li>
+            <li><a href="<?php echo base_url() ?>admin/college"><i class="fa fa-dashboard"></i> All student </a></li>
 
           </ol>
         </section>
@@ -15,7 +15,7 @@
 
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-money fa-fw"></i> Add New Team</h3>
+                                <h3 class="panel-title"><i class="fa fa-money fa-fw"></i> Add New student</h3>
                             </div>
 
                             			  <? if(!empty($this->session->flashdata('smessage'))){ ?>
@@ -36,16 +36,71 @@
 
                             <div class="panel-body">
                                 <div class="col-lg-10">
-                                   <form action="<?php echo base_url() ?>admin/category/add_major_data/<? echo base64_encode(1); ?>" method="POST" id="slide_frm" enctype="multipart/form-data">
+                                   <form action="<?php echo base_url() ?>dcadmin/student/add_student_data/<? echo base64_encode(1); ?>" method="POST" id="slide_frm" enctype="multipart/form-data">
                                 <div class="table-responsive">
                                     <table class="table table-hover">
 
 											<tr>
-                                                <td> <strong>Name</strong>  <span style="color:red;">*</span></strong> </td>
+                                                <td> <strong>First_name</strong>  <span style="color:red;">*</span></strong> </td>
                                                 <td>
-													<input type="text" name="name"  class="form-control" placeholder="" required value="" />
+													<input type="text" name="first_name"  class="form-control" placeholder="" required value="" />
 	                                            </td>
     										</tr>
+                        <tr>
+                                                  <td> <strong>Last_name</strong>  <span style="color:red;">*</span></strong> </td>
+                                                  <td>
+  													<input type="text" name="last_name"  class="form-control" placeholder="" required value="" />
+  	                                            </td>
+      										</tr>
+                          <tr>
+                                                    <td> <strong>fathers_name</strong>  <span style="color:red;">*</span></strong> </td>
+                                                    <td>
+    													<input type="text" name="fathers_name"  class="form-control" placeholder="" required value="" />
+    	                                            </td>
+        										</tr>
+
+                        <tr>
+                                                  <td> <strong>Email</strong>  <span style="color:red;">*</span></strong> </td>
+                                                  <td>
+                            <input type="text" name="email"  class="form-control" placeholder="" required value="" />
+                                                </td>
+                          </tr>
+
+                          <tr>
+                                                    <td> <strong>Phone_Number</strong>  <span style="color:red;">*</span></strong> </td>
+                                                    <td>
+                              <input type="number" name="phone_number"  class="form-control" placeholder="" required value="" />
+                                                  </td>
+                            </tr>
+                            <tr>
+                                                      <td> <strong>Address</strong>  <span style="color:red;">*</span></strong> </td>
+                                                      <td>
+                                <input type="text" name="address"  class="form-control" placeholder="" required value="" />
+                                                    </td>
+                              </tr>
+                            <tr>
+                                                      <td> <strong>City</strong>  <span style="color:red;">*</span></strong> </td>
+                                                      <td>
+                                <input type="text" name="city"  class="form-control" placeholder="" required value="" />
+                                                    </td>
+                              </tr>
+
+                              <tr>
+                                                        <td> <strong>State</strong>  <span style="color:red;">*</span></strong> </td>
+                                                        <td>
+                                  <input type="text" name="state"  class="form-control" placeholder="" required value="" />
+                                                      </td>
+                                </tr>
+
+
+                                <tr>
+                                                          <td> <strong>country</strong>  <span style="color:red;">*</span></strong> </td>
+                                                          <td>
+                                    <input type="text" name="country"  class="form-control" placeholder="" required value="" />
+                                                        </td>
+                                  </tr>
+
+
                         	<tr>
     												<td colspan="2" >
     													<input type="submit" class="btn btn-success" value="save">
