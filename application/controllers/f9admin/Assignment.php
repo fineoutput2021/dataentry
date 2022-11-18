@@ -78,13 +78,14 @@ public function add_assignment(){
     {
       // print_r($this->input->post());
       // exit;
-      $this->form_validation->set_rules('fname', 'assignment', 'required|xss_clean');
+      $this->form_validation->set_rules('fname', 'fname', 'required|xss_clean');
       $this->form_validation->set_rules('assignment', 'assignment', 'required|xss_clean');
       $this->form_validation->set_rules('date', 'date', 'required|xss_clean');
       $this->form_validation->set_rules('word', 'Word', 'required|xss_clean');
       $this->form_validation->set_rules('total', 'total', 'required|xss_clean');
       $this->form_validation->set_rules('paid', 'paid', 'required|xss_clean');
       $this->form_validation->set_rules('pending', 'pending', 'required|xss_clean');
+      $this->form_validation->set_rules('Status', 'Status', 'xss_clean');
 
 
       if($this->form_validation->run()== TRUE)
@@ -96,6 +97,8 @@ public function add_assignment(){
         $total=$this->input->post('total');
         $paid=$this->input->post('paid');
         $pending=$this->input->post('pending');
+        $Status=$this->input->post('Status');
+
 
         $digits = 4;
         $das =rand(pow(10, $digits-1), pow(10, $digits)-1);
@@ -104,6 +107,44 @@ public function add_assignment(){
           $cur_date=date("Y-m-d H:i:s");
 
           $addedby=$this->session->userdata('admin_id');
+
+        $this->load->library('upload');
+          $image="";
+            $img1='image';
+
+              $file_check=($_FILES['image']['error']);
+              if($file_check!=4){
+            	$image_upload_folder = FCPATH . "assets/uploads/team/";
+          						if (!file_exists($image_upload_folder))
+          						{
+          							mkdir($image_upload_folder, DIR_WRITE_MODE, true);
+          						}
+          						$new_file_name="team".date("Ymdhms");
+          						$this->upload_config = array(
+          								'upload_path'   => $image_upload_folder,
+          								'file_name' => $new_file_name,
+          								'allowed_types' =>'jpg|jpeg|png',
+          								'max_size'      => 25000
+          						);
+          						$this->upload->initialize($this->upload_config);
+          						if (!$this->upload->do_upload($img1))
+          						{
+          							$upload_error = $this->upload->display_errors();
+          							// echo json_encode($upload_error);
+          							echo $upload_error;
+          						}
+          						else
+          						{
+
+          							$file_info = $this->upload->data();
+
+          							$image = "assets/uploads/team/".$new_file_name.$file_info['file_ext'];
+          							// $file_info['new_name']=$videoNAmePath;
+          							// $this->step6_model->updateappIconImage($imageNAmePath,$appInfoId);
+          							$nnnn=$file_info['file_name'];
+          							// echo json_encode($file_info);
+          						}
+              }
 
   $typ=base64_decode($t);
   if($typ==1){
@@ -116,6 +157,8 @@ public function add_assignment(){
             'total_auount' =>$total,
             'paid_amount' =>$paid,
             'pending_amount' =>$pending,
+            'image' =>$image,
+            'status' =>$Status,
             'ip' =>$ip,
             'added_by' =>$addedby,
             'is_active' =>1,
@@ -141,7 +184,11 @@ $data_insert = array('student'=>$fname,
           'word_count' =>$word,
           'total_auount' =>$total,
           'paid_amount' =>$paid,
-          'pending_amount' =>$pending
+          'pending_amount' =>$pending,
+          'image' =>$image,
+          'status' =>$Status,
+
+
             );
 
     $this->db->where('id', $idw);
@@ -205,6 +252,10 @@ redirect("login/admin_login","refresh");
                      // echo $this->session->userdata('image');
                      // echo $this->session->userdata('position');
                      // exit;
+                     $this->db->select('*');
+         $this->db->from('tbl_student');
+         //$this->db->where('id',$usr);
+         $data['student_data']= $this->db->get();
                       $id=base64_decode($idd);
                      $data['id']=$idd;
 
@@ -300,7 +351,7 @@ public function delete_assignment($idd){
                                   else
                                   {
                                     echo "Error";
-                                    exit;
+                                      exit;
                                   }
                         }
                         if($t=="inactive"){
@@ -336,7 +387,37 @@ public function delete_assignment($idd){
 
 
 
+                    		public function view_complete_assignment(){
+
+                    										 if(!empty($this->session->userdata('admin_data'))){
+
+
+                    											 $data['user_name']=$this->load->get_var('user_name');
+
+                    											 // echo SITE_NAME;
+                    											 // echo $this->session->userdata('image');
+                    											 // echo $this->session->userdata('position');
+                    											 // exit;
+                    																	 $this->db->select('*');
+                    											 $this->db->from('tbl_assignment');
+                    											 //$this->db->where('id',$usr);
+                    											 $data['assignment_data']= $this->db->get();
+
+
+                    											 $this->load->view('admin/common/header_view',$data);
+                    											 $this->load->view('admin/assignment/view_complete_assignment');
+                    											 $this->load->view('admin/common/footer_view');
+
+                    									 }
+              									 else{
+
+                    											redirect("login/admin_login","refresh");
+                    									 }
 
 
 
+
+
+
+}
 }

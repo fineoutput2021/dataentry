@@ -42,11 +42,8 @@ Student
                     <tr>
                         <th>#</th>
                         <th>Student Name</th>
-                            <th>Last_name</th>
-                          <th>Fathers-name</th>
                         <th>Email</th>
                         <th>Phone Number</th>
-                          <th>Address</th>
                         <th>City</th>
                         <th>State</th>
                         <th>Country</th>
@@ -58,12 +55,9 @@ Student
                       	<?php $i=1; foreach($student_data->result() as $data) { ?>
 <tr>
   <td><?php echo $i ?> </td>
-  <td><?php echo $data->first_name ?></td>
-  <td><?php echo $data->last_name ?></td>
-  <td><?php echo $data->fathers_name ?></td>
+  <td><?php echo $data->full_name ?></td>
   <td><?php echo $data->email ?></td>
   <td><?php echo $data->phone_number ?></td>
-  <td><?php echo $data->address ?></td>
   <td><?php echo $data->city ?></td>
   <td><?php echo $data->state ?></td>
   <td><?php echo $data->country ?></td>

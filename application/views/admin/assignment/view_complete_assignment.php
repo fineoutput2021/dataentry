@@ -49,9 +49,7 @@
                             <th>Paid Amount</th>
                             <th>Pending Amount</th>
                             <th>Document</th>
-                            <th>Assigment Status</th>
-                            <th>Status</th>
-                            <th>Action</th>
+                            <th>Assignment Status</th>
                               </tr>
                           </thead>
                           <tbody>
@@ -71,8 +69,6 @@ $this->db->select('*');
 
            }
 
-
-
 ?>
 </td>
 
@@ -83,8 +79,6 @@ $this->db->select('*');
       <td><?php echo $data->total_auount ?></td>
       <td><?php echo $data->paid_amount ?></td>
       <td><?php echo $data->pending_amount ?></td>
-
-
       <td>
                 <?php if($data->image!=""){  ?>
   <img id="slide_img_path" height=50 width=100  src="<?php echo base_url()."".$data->image ?>" >
@@ -98,38 +92,12 @@ $this->db->select('*');
 
 
 
-        <td><?php if($data->is_active==1){ ?>
-<p class="label bg-green" >Active</p>
-
-<?php } else { ?>
-<p class="label bg-yellow" >Inactive</p>
 
 
-<?php		}   ?>
-</td>
-<td>
-<div class="btn-group" id="btns<?php echo $i ?>">
-<div class="btn-group">
-<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> Action <span class="caret"></span></button>
-<ul class="dropdown-menu" role="menu">
 
-<?php if($data->is_active==1){ ?>
-<li><a href="<?php echo base_url() ?>dcadmin/assignment/updateassignmentStatus/<?php echo base64_encode($data->id) ?>/inactive">Inactive</a></li>
-<?php } else { ?>
-<li><a href="<?php echo base_url() ?>dcadmin/assignment/updateassignmentStatus/<?php echo base64_encode($data->id) ?>/active">Active</a></li>
-<?php		}   ?>
-<li><a href="<?php echo base_url() ?>dcadmin/assignment/update_assignment/<?php echo base64_encode($data->id) ?>">Edit</a></li>
-<li><a href="javascript:;" class="dCnf" mydata="<?php echo $i ?>">Delete</a></li>
-</ul>
-</div>
-</div>
 
-<div style="display:none" id="cnfbox<?php echo $i ?>">
-<p> Are you sure delete this </p>
-<a href="<?php echo base_url() ?>dcadmin/assignment/delete_assignment/<?php echo base64_encode($data->id); ?>" class="btn btn-danger" >Yes</a>
-<a href="javasript:;" class="cans btn btn-default" mydatas="<?php echo $i ?>" >No</a>
-</div>
-</td>
+
+
 </tr>
 <?php $i++; } ?>
 </tbody>

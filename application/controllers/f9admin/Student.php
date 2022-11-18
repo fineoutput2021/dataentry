@@ -10,6 +10,8 @@ function __construct()
 		}
 
 
+// view student Funcation
+
 public function view_student(){
 
 
@@ -37,7 +39,7 @@ $data['student_data']= $this->db->get();
 
      }
 
-//  add funcation
+//  add student funcation
 public function add_student(){
 
        if(!empty($this->session->userdata('admin_data'))){
@@ -62,6 +64,7 @@ public function add_student(){
      }
 
      }
+		 //  add student data funncation
 
       			public function add_student_data($t,$iw="")
 
@@ -115,12 +118,7 @@ public function add_student(){
                     'added_by' =>$addedby,
                     'is_active' =>1,
                     // 'date'=>$cur_date
-
                     );
-
-
-
-
 
           $last_id=$this->base_model->insert_table("tbl_student",$data_insert,1) ;
 
@@ -153,9 +151,6 @@ $data_insert = array('full_name'=>$fname,
 					'country'=>$country
 
                     );
-
-
-
 
           	$this->db->where('id', $idw);
             $last_id=$this->db->update('tbl_student', $data_insert);
@@ -207,6 +202,8 @@ $this->session->set_flashdata('emessage','Please insert some data, No data avail
 
           }
 
+// update student funncation
+
 public function update_student($idd){
 
                  if(!empty($this->session->userdata('admin_data'))){
@@ -235,6 +232,8 @@ public function update_student($idd){
                }
 
                }
+
+							 // delete student funcation
 
 				public function delete_student($idd){
 
@@ -277,6 +276,8 @@ public function update_student($idd){
 				             }
 
 				             }
+// update status funncation
+
 public function updatestudentStatus($idd,$t){
 
          if(!empty($this->session->userdata('admin_data'))){
@@ -330,8 +331,6 @@ public function updatestudentStatus($idd,$t){
                       }
            }
 
-
-
        }
        else{
 
@@ -339,7 +338,5 @@ public function updatestudentStatus($idd,$t){
        }
 
        }
-
-
 
 }

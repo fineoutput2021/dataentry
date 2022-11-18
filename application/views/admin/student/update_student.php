@@ -36,48 +36,32 @@
 
                             <div class="panel-body">
                                 <div class="col-lg-10">
-                                   <form action="<?php echo base_url() ?>dcadmin/student/add_student_data/<? echo base64_encode(2); ?>/<?=$id?>" method="POST" id="slide_frm" enctype="multipart/form-data">
+                                  <form action="<?php echo base_url() ?>dcadmin/student/add_student_data/<? echo base64_encode(2); ?>/<?=$id?>" method="POST" id="slide_frm" enctype="multipart/form-data">
                                 <div class="table-responsive">
                                     <table class="table table-hover">
 
 											<tr>
                                                 <td> <strong>First_name </strong>  <span style="color:red;">*</span></strong> </td>
                                                 <td>
-													<input type="text" name="first_name"  class="form-control" placeholder="" required value="<?=$student->first_name ?>" />
+													<input type="text" name="fname"  class="form-control" placeholder="" required value="<?=$student->full_name ?>" />
 	                                            </td>
     										</tr>
-                        <tr>
-                                                  <td> <strong>Last_name</strong>  <span style="color:red;">*</span></strong> </td>
-                                                  <td>
-  													<input type="text" name="last_name"  class="form-control" placeholder="" required value="<?=$student->last_name ?>" />
-  	                                            </td>
-      										</tr>
-                          <tr>
-                                                    <td> <strong>Fathers_name</strong>  <span style="color:red;">*</span></strong> </td>
-                                                    <td>
-    													<input type="text" name="fathers_name"  class="form-control" placeholder="" required value="<?=$student->fathers_name ?>" />
-    	                                            </td>
-        										</tr>
+
 
                         <tr>
                                                   <td> <strong>Email</strong>  <span style="color:red;">*</span></strong> </td>
                                                   <td>
-                            <input type="email" name="email"  class="form-control" placeholder="" required value="<?=$student->email ?>" />
+                            <input type="email" name="mail"  class="form-control" placeholder="" required value="<?=$student->email ?>" />
                                                 </td>
                           </tr>
 
                           <tr>
                                                     <td> <strong>Phone Number</strong>  <span style="color:red;">*</span></strong> </td>
                                                     <td>
-                              <input type="number" name="phone_number"  class="form-control" placeholder="" required value="<?=$student->phone_number ?>" />
+                              <input type="number" name="phone"  class="form-control" placeholder="" required value="<?=$student->phone_number ?>" />
                                                   </td>
                             </tr>
-                            <tr>
-                                                      <td> <strong>Address</strong>  <span style="color:red;">*</span></strong> </td>
-                                                      <td>
-      													<input type="text" name="address"  class="form-control" placeholder="" required value="<?=$student->address ?>" />
-      	                                            </td>
-          										</tr>
+
 
                             <tr>
                                                       <td> <strong>City</strong>  <span style="color:red;">*</span></strong> </td>

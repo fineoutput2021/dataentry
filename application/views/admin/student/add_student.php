@@ -41,43 +41,26 @@
                                     <table class="table table-hover">
 
 											<tr>
-                                                <td> <strong>First_name</strong>  <span style="color:red;">*</span></strong> </td>
+                                                <td> <strong>Student Name</strong>  <span style="color:red;">*</span></strong> </td>
                                                 <td>
-													<input type="text" name="first_name"  class="form-control" placeholder="" required value="" />
+													<input type="text" name="fname"  class="form-control" placeholder="" required value="" />
 	                                            </td>
     										</tr>
-                        <tr>
-                                                  <td> <strong>Last_name</strong>  <span style="color:red;">*</span></strong> </td>
-                                                  <td>
-  													<input type="text" name="last_name"  class="form-control" placeholder="" required value="" />
-  	                                            </td>
-      										</tr>
-                          <tr>
-                                                    <td> <strong>fathers_name</strong>  <span style="color:red;">*</span></strong> </td>
-                                                    <td>
-    													<input type="text" name="fathers_name"  class="form-control" placeholder="" required value="" />
-    	                                            </td>
-        										</tr>
 
                         <tr>
                                                   <td> <strong>Email</strong>  <span style="color:red;">*</span></strong> </td>
                                                   <td>
-                            <input type="text" name="email"  class="form-control" placeholder="" required value="" />
+                            <input type="text" name="mail"  class="form-control" placeholder="" required value="" />
                                                 </td>
                           </tr>
 
                           <tr>
-                                                    <td> <strong>Phone_Number</strong>  <span style="color:red;">*</span></strong> </td>
+                                                    <td> <strong>Phone Number</strong>  <span style="color:red;">*</span></strong> </td>
                                                     <td>
-                              <input type="number" name="phone_number"  class="form-control" placeholder="" required value="" />
+                              <input type="number" name="phone"  class="form-control" placeholder="" required value="" />
                                                   </td>
                             </tr>
-                            <tr>
-                                                      <td> <strong>Address</strong>  <span style="color:red;">*</span></strong> </td>
-                                                      <td>
-                                <input type="text" name="address"  class="form-control" placeholder="" required value="" />
-                                                    </td>
-                              </tr>
+
                             <tr>
                                                       <td> <strong>City</strong>  <span style="color:red;">*</span></strong> </td>
                                                       <td>
