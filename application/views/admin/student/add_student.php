@@ -50,7 +50,7 @@
                         <tr>
                                                   <td> <strong>Email</strong>  <span style="color:red;">*</span></strong> </td>
                                                   <td>
-                            <input type="text" name="mail"  class="form-control" placeholder="" required value="" />
+                            <input type="email" name="mail"  class="form-control" placeholder="" required value="" />
                                                 </td>
                           </tr>
 

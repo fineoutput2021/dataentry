@@ -30,7 +30,15 @@ function __construct()
 				// echo $this->session->userdata('image');
 				// echo $this->session->userdata('position');
 			// exit;
-			
+
+			$this->db->select('*');
+			$this->db->from('tbl_student');
+			// $this->db->where('student_shift',$cvf);
+			$b= $this->db->count_all_results();
+
+
+			$data['team2']=$b;
+
 
 
 

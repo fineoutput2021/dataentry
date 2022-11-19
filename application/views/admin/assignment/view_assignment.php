@@ -49,7 +49,6 @@
                             <th>Paid Amount</th>
                             <th>Pending Amount</th>
                             <th>Document</th>
-                            <th>Assigment Status</th>
                             <th>Status</th>
                             <th>Action</th>
                               </tr>
@@ -92,37 +91,34 @@ $this->db->select('*');
             Sorry No image Found
             <?php } ?>
               </td>
-              <td><?php echo $data->status ?></td>
 
 
+                  <td><?php if($data->is_active==1){ ?>
+              <p class="label bg-yellow" >Pending</p>
 
+              <?php } else { ?>
+              <p class="label bg-green" >Complete</p>
 
+              <?php		}   ?>
+              </td>
+              <td>
+              <div class="btn-group" id="btns<?php echo $i ?>">
+              <div class="btn-group">
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> Action <span class="caret"></span></button>
+              <ul class="dropdown-menu" role="menu">
 
-        <td><?php if($data->is_active==1){ ?>
-<p class="label bg-green" >Active</p>
+              <?php if($data->is_active==1){ ?>
+              <li><a href="<?php echo base_url() ?>dcadmin/assignment/updateassignmentStatus/<?php echo base64_encode($data->id) ?>/inactive">Panding</a></li>
+              <?php } else { ?>
+              <li><a href="<?php echo base_url() ?>dcadmin/assignment/updateassignmentStatus/<?php echo base64_encode($data->id) ?>/active">Complete</a></li>
+              <?php		}   ?>
+              <li><a href="<?php echo base_url() ?>dcadmin/assignment/update_assignment/<?php echo base64_encode($data->id) ?>">Edit</a></li>
+              <a class="" href="<?php echo base_url() ?>dcadmin/assignment/add_image" role="button" style="margin-bottom:12px;"> Add image</a>
 
-<?php } else { ?>
-<p class="label bg-yellow" >Inactive</p>
-
-
-<?php		}   ?>
-</td>
-<td>
-<div class="btn-group" id="btns<?php echo $i ?>">
-<div class="btn-group">
-<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> Action <span class="caret"></span></button>
-<ul class="dropdown-menu" role="menu">
-
-<?php if($data->is_active==1){ ?>
-<li><a href="<?php echo base_url() ?>dcadmin/assignment/updateassignmentStatus/<?php echo base64_encode($data->id) ?>/inactive">Inactive</a></li>
-<?php } else { ?>
-<li><a href="<?php echo base_url() ?>dcadmin/assignment/updateassignmentStatus/<?php echo base64_encode($data->id) ?>/active">Active</a></li>
-<?php		}   ?>
-<li><a href="<?php echo base_url() ?>dcadmin/assignment/update_assignment/<?php echo base64_encode($data->id) ?>">Edit</a></li>
-<li><a href="javascript:;" class="dCnf" mydata="<?php echo $i ?>">Delete</a></li>
-</ul>
-</div>
-</div>
+              <li><a href="javascript:;" class="dCnf" mydata="<?php echo $i ?>">Delete</a></li>
+              </ul>
+              </div>
+              </div>
 
 <div style="display:none" id="cnfbox<?php echo $i ?>">
 <p> Are you sure delete this </p>

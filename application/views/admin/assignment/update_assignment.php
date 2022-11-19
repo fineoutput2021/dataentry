@@ -53,6 +53,7 @@ Add New assignment
 </td>
 </tr>
 
+
             <tr>
                                   <td> <strong>Assignment Name</strong>  <span style="color:red;">*</span></strong> </td>
                                   <td>
@@ -100,20 +101,6 @@ Add New assignment
         <input type="file" name="image"  class="form-control" placeholder="" required value="<?=$assignment->	image?>" />
                             </td>
       </tr>
-
-      <tr>
-                                <td> <strong>Assigment Status</strong>  <span style="color:red;">*</span></strong> </td>
-                                <td>
-                                  <input type="radio" id="html" name="Status" value="<?=$assignment->	pending_amount?>">
-                                 <label for="html">Complete</label><br>
-                                 <input type="radio" id="css" name="Status" value="Incomplete">
-                                 <label for="css">Incomplete</label><br>
-
-                              </td>
-        </tr>
-
-
-
 
 
 

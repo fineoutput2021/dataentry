@@ -103,20 +103,11 @@ Add New Team
   <tr>
                             <td> <strong>Upload Document</strong>  <span style="color:red;">*</span></strong> </td>
                             <td>
-      <input type="file" name="image"  class="form-control" placeholder="" required value="" />
+      <input type="file" name="image"  class="form-control" placeholder=""  value="" />
                           </td>
     </tr>
 
-    <tr>
-                              <td> <strong>Assigment Status</strong>  <span style="color:red;">*</span></strong> </td>
-                              <td>
-                                <input type="radio" id="html" name="Status" value="Complete">
-                               <label for="html">Complete</label><br>
-                               <input type="radio" id="css" name="Status" value="Incomplete">
-                               <label for="css">Incomplete</label><br>
 
-                            </td>
-      </tr>
 
 
 
