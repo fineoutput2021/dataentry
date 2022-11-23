@@ -10,7 +10,7 @@ function __construct()
 		}
 
 
-// view student Funcation
+// view student Funcation---
 
 public function view_student(){
 

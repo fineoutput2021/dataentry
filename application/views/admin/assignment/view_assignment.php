@@ -10,7 +10,7 @@
 <a class="btn btn-info cticket" href="<?php echo base_url() ?>dcadmin/assignment/add_assignment" role="button" style="margin-bottom:12px;"> Add assignment</a>
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title"><i class="fa fa-money fa-fw"></i>View team</h3>
+                <h3 class="panel-title"><i class="fa fa-money fa-fw"></i>View  team</h3>
             </div>
                <div class="panel panel-default">
 

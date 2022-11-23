@@ -9,7 +9,7 @@ $this->load->model("admin/base_model");
 $this->load->library('user_agent');
 }
 
-//========================== views====================================
+//========================= views====================================
 
 public function View_assginment(){
 

@@ -17,7 +17,7 @@ function __construct()
 
 				$data['user_name']=$this->load->get_var('user_name');
 
-				// echo SITE_NAME;
+				// echo ;
 
 				$this->db->select('*');
 				$this->db->from('tbl_assignment');
