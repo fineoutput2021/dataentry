@@ -43,12 +43,11 @@
                             <th>student</th>
                             <th>digit</th>
                             <th>Assignment</th>
-                            <th>Date</th>
+                            <th>Deadline Date</th>
                             <th>Word</th>
                             <th>Total</th>
                             <th>Paid Amount</th>
                             <th>Pending Amount</th>
-                            <th>Document</th>
                             <th>image</th>
                             <th>Status</th>
 
@@ -70,7 +69,6 @@ $this->db->select('*');
               echo $da->full_name;
 
            }
-
 ?>
 </td>
 
@@ -78,7 +76,7 @@ $this->db->select('*');
       <td><?php echo $data->assignment_name ?></td>
       <td><?php echo $data->date ?></td>
       <td><?php echo $data->word_count ?></td>
-      <td><?php echo $data->total_auount ?></td>
+      <td><?php echo $data->total_amount ?></td>
       <td><?php echo $data->paid_amount ?></td>
       <td><?php echo $data->pending_amount ?></td>
       <td>
@@ -89,13 +87,6 @@ $this->db->select('*');
             <?php } ?>
               </td>
 
-              <td>
-                        <?php if($data->images!=""){  ?>
-          <img id="slide_img_path" height=50 width=100  src="<?php echo base_url()."".$data->images ?>" >
-                    <?php }else {  ?>
-                    Sorry No image Found
-                    <?php } ?>
-                  </td>
 
               <td><?php if($data->is_active==1){ ?>
           <p class="label bg-yellow" >Pending</p>

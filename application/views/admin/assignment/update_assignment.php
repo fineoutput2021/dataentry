@@ -33,7 +33,6 @@ Add New assignment
   			</div>
   			  <? } ?>
 
-
   <div class="panel-body">
       <div class="col-lg-10">
         <form action="<?php echo base_url() ?>dcadmin/assignment/add_assignment_data/<? echo base64_encode(2); ?>/<?=$id?>" method="POST" id="slide_frm" enctype="multipart/form-data">
@@ -77,7 +76,7 @@ Add New assignment
 <tr>
                         <td> <strong>Total Amount</strong>  <span style="color:red;">*</span></strong> </td>
                         <td>
-  <input type="text" name="total"  class="form-control" placeholder="" required value="<?=$assignment->total_auount?>" />
+  <input type="text" name="total"  class="form-control" placeholder="" required value="<?=$assignment->total_amount?>" />
                       </td>
 </tr>
 
@@ -103,7 +102,6 @@ Add New assignment
       </tr>
 
 
-
 	<td colspan="2" >
 		<input type="submit" class="btn btn-success" value="save">
 	</td>
@@ -114,7 +112,6 @@ Add New assignment
        </form>
 
           </div>
-
 
 
       </div>

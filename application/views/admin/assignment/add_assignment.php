@@ -63,7 +63,7 @@ Add New Team
 </tr>
 
 <tr>
-                        <td> <strong>Date</strong>  <span style="color:red;">*</span></strong> </td>
+                        <td> <strong>Deadline Date</strong>  <span style="color:red;">*</span></strong> </td>
                         <td>
   <input type="date" name="date"  class="form-control" placeholder="" required value="" />
                       </td>

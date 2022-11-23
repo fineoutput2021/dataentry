@@ -2,11 +2,7 @@
 <section class="content-header">
 <h1>Assigment
 </h1>
-<ol class="breadcrumb">
-<li><a href="<?php echo base_url() ?>admin/dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
-<li><a href="<?php echo base_url() ?>admin/college"><i class="fa fa-dashboard"></i> All assignment </a></li>
-<li class="active">View assignment</li>
-</ol>
+
 </section>
 <section class="content">
 <div class="row">
@@ -43,7 +39,7 @@
                             <th>student</th>
                             <th>digit</th>
                             <th>Assignment</th>
-                            <th>Date</th>
+                            <th>Deadline Date</th>
                             <th>Word</th>
                             <th>Total</th>
                             <th>Paid Amount</th>
@@ -70,8 +66,6 @@ $this->db->select('*');
 
            }
 
-
-
 ?>
 </td>
 
@@ -79,11 +73,9 @@ $this->db->select('*');
       <td><?php echo $data->assignment_name ?></td>
       <td><?php echo $data->date ?></td>
       <td><?php echo $data->word_count ?></td>
-      <td><?php echo $data->total_auount ?></td>
+      <td><?php echo $data->total_amount ?></td>
       <td><?php echo $data->paid_amount ?></td>
       <td><?php echo $data->pending_amount ?></td>
-
-
       <td>
                 <?php if($data->image!=""){  ?>
   <img id="slide_img_path" height=50 width=100  src="<?php echo base_url()."".$data->image ?>" >
@@ -94,10 +86,10 @@ $this->db->select('*');
 
 
                   <td><?php if($data->is_active==1){ ?>
-              <p class="label bg-yellow" >Pending</p>
+              <p class="label bg-green" >Complete</p>
 
               <?php } else { ?>
-              <p class="label bg-green" >Complete</p>
+              <p class="label bg-yellow" >Pending</p>
 
               <?php		}   ?>
               </td>
@@ -106,14 +98,12 @@ $this->db->select('*');
               <div class="btn-group">
               <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> Action <span class="caret"></span></button>
               <ul class="dropdown-menu" role="menu">
+                <li><a href="<?php echo base_url() ?>dcadmin/assignment/update_image/<?php echo base64_encode($data->id) ?>">Complete Assignment</a></li>
 
-              <?php if($data->is_active==1){ ?>
-              <li><a href="<?php echo base_url() ?>dcadmin/assignment/updateassignmentStatus/<?php echo base64_encode($data->id) ?>/inactive">Panding</a></li>
-              <?php } else { ?>
-              <li><a href="<?php echo base_url() ?>dcadmin/assignment/updateassignmentStatus/<?php echo base64_encode($data->id) ?>/active">Complete</a></li>
-              <?php		}   ?>
+
               <li><a href="<?php echo base_url() ?>dcadmin/assignment/update_assignment/<?php echo base64_encode($data->id) ?>">Edit</a></li>
-              <a class="" href="<?php echo base_url() ?>dcadmin/assignment/add_image" role="button" style="margin-bottom:12px;"> Add image</a>
+
+              <!-- <a class="" href="<?php echo base_url() ?>dcadmin/assignment/update_image" role="button" style="margin-bottom:12px;"> Add image</a> -->
 
               <li><a href="javascript:;" class="dCnf" mydata="<?php echo $i ?>">Delete</a></li>
               </ul>

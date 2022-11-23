@@ -25,7 +25,7 @@ function __construct()
 				$a= $this->db->count_all_results();
 
 
-				$data['team']=$a;
+				$data['tyy']=$a;
 
 				// echo $this->session->userdata('image');
 				// echo $this->session->userdata('position');
@@ -39,8 +39,13 @@ function __construct()
 
 			$data['team2']=$b;
 
+						$this->db->select('*');
+						$this->db->from('tbl_team');
+						// $this->db->where('student_shift',$cvf);
+						$b= $this->db->count_all_results();
 
 
+						$data['teams']=$b;
 
 			      			$this->db->select('*');
 			$this->db->from('tbl_team');
