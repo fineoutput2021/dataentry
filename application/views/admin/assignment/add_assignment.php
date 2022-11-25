@@ -15,7 +15,7 @@ Add New Team
 
 <div class="panel panel-default">
   <div class="panel-heading">
-      <h3 class="panel-title"><i class="fa fa-money fa-fw"></i>Add New Team</h3>
+      <h3 class="panel-title"><i class="fa fa-money fa-fw"></i> Add New Team</h3>
   </div>
 
   			  <? if(!empty($this->session->flashdata('smessage'))){ ?>
@@ -44,7 +44,7 @@ Add New Team
             <tr>
 <td> <strong>Student Name</strong>  <span style="color:red;">*</span></strong> </td>
 <td>
-<select class="form-control" name="fname"  >
+<select class="form-control" name="student"  >
    <option value="">Select Name</option>
    <? foreach ($student_data->result() as $s) {
      ?>
@@ -63,13 +63,13 @@ Add New Team
 </tr>
 
 <tr>
-                        <td> <strong>Deadline Date</strong>  <span style="color:red;">*</span></strong> </td>
+                        <td> <strong>Given date</strong>  <span style="color:red;">*</span></strong> </td>
                         <td>
-  <input type="date" name="date"  class="form-control" placeholder="" required value="" />
+  <input type="date" name="deadline_date"  class="form-control" placeholder="" required value="" />
                       </td>
 </tr>
-
 <tr>
+
                           <td> <strong>Word Count</strong>  <span style="color:red;">*</span></strong> </td>
                           <td>
     <input type="text" name="word"  class="form-control" placeholder="" required value="" />
@@ -79,7 +79,7 @@ Add New Team
   <tr>
                             <td> <strong>Total Amount</strong>  <span style="color:red;">*</span></strong> </td>
                             <td>
-      <input type="text" name="total"  class="form-control" placeholder="" required value="" />
+      <input type="text" name="total_amount"  class="form-control" placeholder="" required value="" />
                           </td>
     </tr>
 

@@ -312,7 +312,7 @@
                               if(empty($dawwa)){
                                 echo base_url().ADMIN_URL."/".$sd['url'].'">';?>
                                 <span style="<?php if($currentURL == $urls){ echo "color:hsl(353deg 91% 53%);";}?>"><i class="fa fa-adjust" aria-hidden="true"></i></span>
-                                <span><? echo $sd['name'] ?></span>
+                                <span><? echo$sd['name'] ?></span>
                                 <span class="label label-primary pull-right"></span>
                                 </a>
 

@@ -19,9 +19,11 @@ function __construct()
 
 				// echo ;
 
+					// code...
+
 				$this->db->select('*');
 				$this->db->from('tbl_assignment');
-				// $this->db->where('student_shift',$cvf);
+
 				$a= $this->db->count_all_results();
 
 
@@ -39,18 +41,20 @@ function __construct()
 
 			$data['team2']=$b;
 
-						$this->db->select('*');
-						$this->db->from('tbl_team');
-						// $this->db->where('student_shift',$cvf);
-						$b= $this->db->count_all_results();
 
 
-						$data['teams']=$b;
 
-			      			$this->db->select('*');
+			$this->db->select('*');
 			$this->db->from('tbl_team');
-			//$this->db->where('id',$usr);
-			$data['']= $this->db->get();
+			$c= $this->db->count_all_results();
+			$data['teams']= $c;
+
+			$fu_date = date('Y-m-d', strtotime('+2 days'));
+			$this->db->select('*');
+			$this->db->from('tbl_assignment');
+			$this->db->where('deadline_date',$fu_date);
+			$this->db->where('is_active',0);
+			$data['deadline_date']= $this->db->get();
 
 
 			$this->load->view('admin/common/header_view',$data);

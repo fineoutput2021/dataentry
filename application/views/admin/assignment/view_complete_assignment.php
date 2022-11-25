@@ -2,11 +2,7 @@
 <section class="content-header">
 <h1>Assigment
 </h1>
-<ol class="breadcrumb">
-<li><a href="<?php echo base_url() ?>admin/dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
-<li><a href="<?php echo base_url() ?>admin/college"><i class="fa fa-dashboard"></i> All assignment </a></li>
-<li class="active">View assignment</li>
-</ol>
+
 </section>
 <section class="content">
 <div class="row">
@@ -14,7 +10,7 @@
 <a class="btn btn-info cticket" href="<?php echo base_url() ?>dcadmin/assignment/add_assignment" role="button" style="margin-bottom:12px;"> Add assignment</a>
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title"><i class="fa fa-money fa-fw"></i>View  team</h3>
+                <h3 class="panel-title"><i class="fa fa-money fa-fw"></i>View assignment</h3>
             </div>
                <div class="panel panel-default">
 
@@ -43,12 +39,13 @@
                             <th>student</th>
                             <th>digit</th>
                             <th>Assignment</th>
-                            <th>Deadline Date</th>
+                            <th>Deadline date</th>
                             <th>Word</th>
-                            <th>Total</th>
+                            <th>Total amount</th>
                             <th>Paid Amount</th>
                             <th>Pending Amount</th>
-                            <th>image</th>
+                            <th>Document</th>
+                             <th>Sumbit date</th>
                             <th>Status</th>
 
                               </tr>
@@ -69,16 +66,19 @@ $this->db->select('*');
               echo $da->full_name;
 
            }
+
 ?>
 </td>
 
       <td><?php echo $data->digit ?></td>
       <td><?php echo $data->assignment_name ?></td>
-      <td><?php echo $data->date ?></td>
+  <td><?php echo $data->deadline_date ?></td>
       <td><?php echo $data->word_count ?></td>
-      <td><?php echo $data->total_amount ?></td>
-      <td><?php echo $data->paid_amount ?></td>
-      <td><?php echo $data->pending_amount ?></td>
+      <td>₹<?php echo $data->total_amount ?></td>
+      <td>₹<?php echo $data->paid_amount ?></td>
+      <td>₹<?php echo $data->pending_amount ?></td>
+
+
       <td>
                 <?php if($data->image!=""){  ?>
   <img id="slide_img_path" height=50 width=100  src="<?php echo base_url()."".$data->image ?>" >
@@ -86,13 +86,19 @@ $this->db->select('*');
             Sorry No image Found
             <?php } ?>
               </td>
+              <td><?php $data->date;
+              {
+               echo $cur_date=date("Y-m-d ");
+              }
+              ?></td>
+
 
 
               <td><?php if($data->is_active==1){ ?>
-          <p class="label bg-yellow" >Pending</p>
+          <p class="label bg-green" >complete</p>
 
           <?php } else { ?>
-          <p class="label bg-green" >Complete</p>
+          <p class="label bg-green" >pending</p>
 
 
           <?php		}   ?>

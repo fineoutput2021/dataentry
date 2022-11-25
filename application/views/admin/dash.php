@@ -12,7 +12,16 @@
             <li class="active">Dashboard</li>
           </ol>
         </section>
-
+        <?foreach($deadline_date->result() as $dead) {
+            $newdate = new DateTime($dead->deadline_date);
+            $dd= $newdate->format('d-m-Y');   #d-m-Y  // March 10, 2001, 5:16 pm
+            ?>
+        <div class="alert alert-danger alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <h4><i class="icon fa fa-ban"></i> Alert!</h4>
+        <?='Assignment: "'.$dead->assignment_name.'" due date is '.$dd?>
+        </div>
+        <? } ?>
 
         <section class="content">
           <!-- Info boxes -->
@@ -64,14 +73,7 @@ echo $team2;
                 </div><!-- /.info-box-content -->
               </div><!-- /.info-box -->
             </div><!-- /.col -->
-            <div class="col-md-3 col-sm-6 col-xs-12">
-              <div class="info-box">
-                <span class="info-box-icon bg-yellow"><i class="fa fa-home"></i></span>
-                <div class="info-box-content">
-                  <span class="info-box-text">New Members</span>
-                  <span class="info-box-number">2,000</span>
-                </div><!-- /.info-box-content -->
-              </div><!-- /.info-box -->
+          
             </div><!-- /.col -->
           </div><!-- /.row -->
 

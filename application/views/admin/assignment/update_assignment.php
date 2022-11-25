@@ -42,7 +42,7 @@ Add New assignment
             <tr>
 <td> <strong>Update Student Name</strong>  <span style="color:red;">*</span></strong> </td>
 <td>
-<select class="form-control" name="fname"  >
+<select class="form-control" name="student"  >
    <option value="">Select Name</option>
    <? foreach ($student_data->result() as $s) {
      ?>
@@ -59,62 +59,62 @@ Add New assignment
             <input type="text" name="assignment"  class="form-control" placeholder="" required value="<?=$assignment->assignment_name?>" />
                                 </td>
             </tr>
-            <td> <strong>Date</strong>  <span style="color:red;">*</span></strong> </td>
+    <td> <strong>Date</strong>  <span style="color:red;">*</span></strong> </td>
             <td>
-<input type="date" name="date"  class="form-control" placeholder="" required value="<?=$assignment->	date?>" />
+    <input type="date" name="deadline_date"  class="form-control" placeholder="" required value="<?=$assignment->deadline_date?>" />
           </td>
 
 
 
 <tr>
-                      <td> <strong>Word count</strong>  <span style="color:red;">*</span></strong> </td>
-                      <td>
+        <td> <strong>Word count</strong>  <span style="color:red;">*</span></strong> </td>
+<td>
 <input type="text" name="word"  class="form-control" placeholder="" required value="<?=$assignment->	word_count?>" />
                     </td>
 </tr>
 
 <tr>
-                        <td> <strong>Total Amount</strong>  <span style="color:red;">*</span></strong> </td>
-                        <td>
-  <input type="text" name="total"  class="form-control" placeholder="" required value="<?=$assignment->total_amount?>" />
-                      </td>
+  <td> <strong>Total Amount</strong>  <span style="color:red;">*</span></strong> </td>
+  <td>
+  <input type="text" name="total_amount"  class="form-control" placeholder="" required value="<?=$assignment->total_amount?>" />
+  </td>
 </tr>
 
 <tr>
-                          <td> <strong>Paid Amount</strong>  <span style="color:red;">*</span></strong> </td>
-                          <td>
+    <td> <strong>Paid Amount</strong>  <span style="color:red;">*</span></strong> </td>
+    <td>
     <input type="text" name="paid"  class="form-control" placeholder="" required value="<?=$assignment->paid_amount?>" />
-                        </td>
+    </td>
   </tr>
 
   <tr>
-                            <td> <strong>Pending Amount</strong>  <span style="color:red;">*</span></strong> </td>
-                            <td>
+      <td> <strong>Pending Amount</strong>  <span style="color:red;">*</span></strong> </td>
+      <td>
       <input type="text" name="pending"  class="form-control" placeholder="" required value="<?=$assignment->	pending_amount?>" />
-                          </td>
+      </td>
     </tr>
 
     <tr>
-                              <td> <strong>Update Document</strong>  <span style="color:red;">*</span></strong> </td>
-                              <td>
+       <td> <strong>Update Document</strong>  <span style="color:red;">*</span></strong> </td>
+       <td>
         <input type="file" name="image"  class="form-control" placeholder="" required value="<?=$assignment->	image?>" />
-                            </td>
+        </td>
       </tr>
 
 
-	<td colspan="2" >
-		<input type="submit" class="btn btn-success" value="save">
-	</td>
-</tr>
-              </table>
+	   <td colspan="2" >
+		 <input type="submit" class="btn btn-success" value="save">
+	      </td>
+         </tr>
+        </table>
+        </div>
+
+      </form>
+
           </div>
 
-       </form>
 
-          </div>
-
-
-      </div>
+         </div>
 
   </div>
 

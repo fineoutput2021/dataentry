@@ -1,7 +1,11 @@
 <div class="content-wrapper">
 <section class="content-header">
-<h1>Assigment
+<h1>
+  Assigment
+
+  </ol>
 </h1>
+
 
 </section>
 <section class="content">
@@ -10,7 +14,7 @@
 <a class="btn btn-info cticket" href="<?php echo base_url() ?>dcadmin/assignment/add_assignment" role="button" style="margin-bottom:12px;"> Add assignment</a>
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title"><i class="fa fa-money fa-fw"></i>View  team</h3>
+                <h3 class="panel-title"><i class="fa fa-money fa-fw"></i>View assignment</h3>
             </div>
                <div class="panel panel-default">
 
@@ -39,9 +43,10 @@
                             <th>student</th>
                             <th>digit</th>
                             <th>Assignment</th>
+
                             <th>Deadline Date</th>
                             <th>Word</th>
-                            <th>Total</th>
+                            <th>Total amount</th>
                             <th>Paid Amount</th>
                             <th>Pending Amount</th>
                             <th>Document</th>
@@ -71,11 +76,12 @@ $this->db->select('*');
 
       <td><?php echo $data->digit ?></td>
       <td><?php echo $data->assignment_name ?></td>
-      <td><?php echo $data->date ?></td>
+
+      <td><?php echo $data->deadline_date ?></td>
       <td><?php echo $data->word_count ?></td>
-      <td><?php echo $data->total_amount ?></td>
-      <td><?php echo $data->paid_amount ?></td>
-      <td><?php echo $data->pending_amount ?></td>
+      <td> ₹  <?php echo $data->total_amount ?></td>
+      <td> ₹  <?php echo $data->paid_amount ?></td>
+      <td> ₹  <?php echo $data->pending_amount ?></td>
       <td>
                 <?php if($data->image!=""){  ?>
   <img id="slide_img_path" height=50 width=100  src="<?php echo base_url()."".$data->image ?>" >
@@ -85,11 +91,11 @@ $this->db->select('*');
               </td>
 
 
-                  <td><?php if($data->is_active==1){ ?>
-              <p class="label bg-green" >Complete</p>
+                  <td><?php if($data->is_active==0){ ?>
+              <p class="label bg-yellow" >pending</p>
 
               <?php } else { ?>
-              <p class="label bg-yellow" >Pending</p>
+              <p class="label bg-yellow" >complete</p>
 
               <?php		}   ?>
               </td>
