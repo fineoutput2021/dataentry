@@ -143,6 +143,9 @@
 var total = $("#total").val();
 var paid = $("#paid").val();
 var pending = $("#pending").val();
+alert(total)
+alert(paid)
+alert(pending)
 $('#pending').val(total-paid);
 $('#paid').val(total-pending);
 });
