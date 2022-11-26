@@ -1,7 +1,7 @@
 <div class="content-wrapper">
 <section class="content-header">
 <h1>
-  Assigment
+  Assignment
 
   </ol>
 </h1>
@@ -11,10 +11,10 @@
 <section class="content">
 <div class="row">
 <div class="col-lg-12">
-<a class="btn btn-info cticket" href="<?php echo base_url() ?>dcadmin/assignment/add_assignment" role="button" style="margin-bottom:12px;"> Add assignment</a>
+<a class="btn btn-info cticket" href="<?php echo base_url() ?>dcadmin/assignment/add_assignment" role="button" style="margin-bottom:12px;"> Add Assignment</a>
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title"><i class="fa fa-money fa-fw"></i>View assignment</h3>
+                <h3 class="panel-title"><i class="fa fa-money fa-fw"></i>View Assignment</h3>
             </div>
                <div class="panel panel-default">
 
@@ -36,14 +36,15 @@
 
             <div class="panel-body">
                 <div class="box-body table-responsive no-padding">
-                <table class="table table-bordered table-hover table-striped" id="">
+                <table class="table table-bordered table-hover table-striped" id="assignmentTable">
+
+
                     <thead>
                         <tr>
                             <th>#</th>
                             <th>student</th>
                             <th>digit</th>
                             <th>Assignment</th>
-
                             <th>Deadline Date</th>
                             <th>Word</th>
                             <th>Total amount</th>
@@ -55,7 +56,19 @@
                               </tr>
                           </thead>
                           <tbody>
-                          	<?php $i=1; foreach($assignment_data->result() as $data) { ?>
+
+                        	<?php $i=1; foreach($assignment_data->result() as $data) {
+                            $numlength = strlen((string)$data->digit);
+                            if($numlength==1){
+                              $digit="000".$data->digit;
+                            }else if($numlength==2){
+                                $digit="00".$data->digit;
+                            }else if($numlength==3){
+                                $digit="0".$data->digit;
+                            }else{
+                                $digit=$data->digit;
+                            }
+                            ?>
   <tr>
       <td><?php echo $i ?> </td>
       <td><?
@@ -74,12 +87,12 @@ $this->db->select('*');
 ?>
 </td>
 
-      <td><?php echo $data->digit ?></td>
+      <td><?php echo $digit ?></td>
       <td><?php echo $data->assignment_name ?></td>
 
       <td><?php echo $data->deadline_date ?></td>
       <td><?php echo $data->word_count ?></td>
-      <td> ₹  <?php echo $data->total_amount ?></td>
+      <td> ₹ <?php echo $data->total_amount ?></td>
       <td> ₹  <?php echo $data->paid_amount ?></td>
       <td> ₹  <?php echo $data->pending_amount ?></td>
       <td>
@@ -105,7 +118,6 @@ $this->db->select('*');
               <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> Action <span class="caret"></span></button>
               <ul class="dropdown-menu" role="menu">
                 <li><a href="<?php echo base_url() ?>dcadmin/assignment/update_image/<?php echo base64_encode($data->id) ?>">Complete Assignment</a></li>
-
 
               <li><a href="<?php echo base_url() ?>dcadmin/assignment/update_assignment/<?php echo base64_encode($data->id) ?>">Edit</a></li>
 
@@ -154,7 +166,7 @@ margin:5px;
 <script type="text/javascript">
 
 $(document).ready(function(){
-$('#userTable').DataTable({
+$('#assignmentTable').DataTable({
 responsive: true,
 // bSort: true
 });

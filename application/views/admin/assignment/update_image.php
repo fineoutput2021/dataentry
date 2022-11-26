@@ -43,7 +43,7 @@
                 <input type="hidden" name="null" value="">
                                         <td> <strong>update image</strong>  <span style="color:red;">*</span></strong> </td>
                                         <td>
-									<input type="file" name="images"  class="form-control" placeholder="" required value="" />
+									<input type="file" name="image"  class="form-control" placeholder="" required value="" />
                                       </td>
 								</tr>
                 	<tr>

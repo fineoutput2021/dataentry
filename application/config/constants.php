@@ -98,3 +98,6 @@ define('PASSWORD','info@fineoutput2019');
 define('EMAIL','info@fineoutput.co.in');
 define('SMTP_HOST','mail.fineoutput.co.in');
 define('SMTP_PORT','587');
+
+//---- due days----
+define('DUE_DAYS','2');

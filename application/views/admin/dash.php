@@ -25,8 +25,11 @@
 
         <section class="content">
           <!-- Info boxes -->
+
           <div class="row">
+
             <div class="col-md-3 col-sm-6 col-xs-12">
+
               <div class="info-box">
                 <span class="info-box-icon bg-aqua"><i class="fa fa-user"></i></span>
                 <div class="info-box-content">
@@ -40,7 +43,9 @@ echo $team2;
                 </div><!-- /.info--content -->
               </div><!-- /.info-box -->
             </div><!-- /.col -->
+
             <div class="col-md-3 col-sm-6 col-xs-12">
+                <!-- Info boxes -->
               <div class="info-box">
                 <span class="info-box-icon bg-red"><i class="fa fa-file"></i></span>
                 <div class="info-box-content">
@@ -57,29 +62,60 @@ echo $team2;
 
             <!-- fix for small devices only -->
             <div class="clearfix visible-sm-block"></div>
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+              <a href="<?=base_url()?>dcadmin/Assignment/view_complete_assignment">
+                          <div class="info-box">
+                            <span class="info-box-icon bg-green"><i class="fa fa-user"></i></span>
+                            <div class="info-box-content">
+                              <span class="info-box-text">Complete assignment</span>
+                              <span class="info-box-number">
 
-            <div class="col-md-3 col-sm-6 col-xs-12">
-              <div class="info-box">
-                <span class="info-box-icon bg-green"><i class="fa fa-users"></i></span>
-                <div class="info-box-content">
-                  <span class="info-box-text">Team</span>
-                  <span class="info-box-number">
-                    <span class="info-box-number">
-  <?
-  echo $teams;
-  ?>
+                                <?
+                                echo $ten;
+                                ?>
 
                   </span>
                 </div><!-- /.info-box-content -->
               </div><!-- /.info-box -->
             </div><!-- /.col -->
-          
-            </div><!-- /.col -->
-          </div><!-- /.row -->
+            <div class="clearfix visible-sm-block"></div>
 
+            <a href="<?=base_url()?>dcadmin/Assignment/view_due_assignment">
+              <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="info-box">
+                <span class="info-box-icon bg-yellow"><i class="fa fa-file"></i></span>
+                <div class="info-box-content">
+                  <span class="info-box-text">Due assignment</span>
+                  <span class="info-box-number">
+                    <span class="info-box-number">
+<?=$deadline_count?>
+</span>
+</div><!-- /.info-box-content -->
+</div><!-- /.info-box -->
+</div>
+<div class="clearfix visible-sm-block"></div>
+<!-- Info boxes -->
+<div class="col-md-3 col-sm-6 col-xs-12">
+  <div class="info-box">
+    <span class="info-box-icon bg-blue"><i class="fa fa-users"></i></span>
+    <div class="info-box-content">
+      <span class="info-box-text">Team</span>
+      <span class="info-box-number">
+        <span class="info-box-number">
+<?
+echo $teams;
+?>
+
+
+
+</span>
+</div><!-- /.info-box-content -->
+</div><!-- /.info-box -->
+</div>
 
         </section><!-- /.content -->
       </div><!-- /.content-wrapper -->
 
+</a>
 
     </div><!-- ./wrapper -->

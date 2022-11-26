@@ -1,13 +1,9 @@
 <div class="content-wrapper">
 <section class="content-header">
 <h1>
-Add New assignment
+Update Assignment
 </h1>
-<ol class="breadcrumb">
-<li><a href="<?php echo base_url() ?>admin/dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
-<li><a href="<?php echo base_url() ?>admin/college"><i class="fa fa-dashboard"></i> All assignment </a></li>
 
-</ol>
 </section>
 <section class="content">
 <div class="row">
@@ -15,7 +11,7 @@ Add New assignment
 
 <div class="panel panel-default">
   <div class="panel-heading">
-      <h3 class="panel-title"><i class="fa fa-money fa-fw"></i>Add New assignment</h3>
+      <h3 class="panel-title"><i class="fa fa-money fa-fw"></i>Update Assignment</h3>
   </div>
 
   			  <? if(!empty($this->session->flashdata('smessage'))){ ?>
@@ -40,13 +36,14 @@ Add New assignment
           <table class="table table-hover">
 
             <tr>
-<td> <strong>Update Student Name</strong>  <span style="color:red;">*</span></strong> </td>
+<td> <strong>Student Name</strong>  <span style="color:red;">*</span></strong> </td>
 <td>
 <select class="form-control" name="student"  >
    <option value="">Select Name</option>
    <? foreach ($student_data->result() as $s) {
      ?>
-     <option value="<? echo $s->id; ?>"><? echo $s->full_name; ?></option>
+     <!-- <option value="<? echo $s->id; ?>"><? echo $s->full_name; ?></option> -->
+      <option value="<?= $s->id ?>" <?php if($assignment->student == $s->id){ echo "selected"; } ?>> <?= $s->full_name ?> </option>
      <?
    } ?>
 </td>
@@ -95,12 +92,16 @@ Add New assignment
     </tr>
 
     <tr>
-       <td> <strong>Update Document</strong>  <span style="color:red;">*</span></strong> </td>
-       <td>
-        <input type="file" name="image"  class="form-control" placeholder="" required value="<?=$assignment->	image?>" />
-        </td>
-      </tr>
-
+                       <td> <strong>Upload</strong> <span style="color:red;"><br />Big: 2220px X 1000px<br /></span></strong> </td>
+                       <td>
+                         <input type="file" name="image" class="form-control" placeholder="" value="<?=$assignment->image?>" />
+                         <?php if ($assignment->image!="") {  ?>
+                         <img id="slide_img_path" height=50 width=100 src="<?php echo base_url().$assignment->image ?>">
+                         <?php } else {  ?>
+                         Sorry No image Found
+                         <?php } ?>
+                       </td>
+                     </tr>
 
 	   <td colspan="2" >
 		 <input type="submit" class="btn btn-success" value="save">

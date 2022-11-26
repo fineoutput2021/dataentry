@@ -1,11 +1,11 @@
 <div class="content-wrapper">
 <section class="content-header">
 <h1>
-Add New Team
+Add New Assignment
 </h1>
 <ol class="breadcrumb">
 <li><a href="<?php echo base_url() ?>admin/dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
-<li><a href="<?php echo base_url() ?>admin/college"><i class="fa fa-dashboard"></i> All Team </a></li>
+<li><a href="<?php echo base_url() ?>admin/college"><i class="fa fa-dashboard"></i> All Assignment</a></li>
 
 </ol>
 </section>
@@ -15,7 +15,7 @@ Add New Team
 
 <div class="panel panel-default">
   <div class="panel-heading">
-      <h3 class="panel-title"><i class="fa fa-money fa-fw"></i> Add New Team</h3>
+      <h3 class="panel-title"><i class="fa fa-money fa-fw"></i> Add New Assignment</h3>
   </div>
 
   			  <? if(!empty($this->session->flashdata('smessage'))){ ?>

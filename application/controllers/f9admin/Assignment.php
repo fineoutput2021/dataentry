@@ -12,17 +12,17 @@ $this->load->library('user_agent');
 public function view_assignment(){
 
 
+  if(!empty($this->session->userdata('admin_data'))){
 
+
+  $data['user_name']=$this->load->get_var('user_name');
 $this->db->select('*');
 $this->db->from('tbl_assignment');
 $this->db->where('is_active',0);
 $data['assignment_data']= $this->db->get();
 
 
-if(!empty($this->session->userdata('admin_data'))){
 
-
-$data['user_name']=$this->load->get_var('user_name');
 
 $this->load->view('admin/common/header_view',$data);
 $this->load->view('admin/assignment/view_assignment');
@@ -99,9 +99,16 @@ public function add_assignment(){
         $paid=$this->input->post('paid');
         $pending=$this->input->post('pending');
 
-
-        $digits = 4;
-        $das =rand(pow(10, $digits-1), pow(10, $digits)-1);
+                    $this->db->select('*');
+                    $this->db->from('tbl_assignment');
+                    $this->db->order_by('id','desc');
+                    $dsa= $this->db->get();
+                    $da=$dsa->row();
+                    if(!empty($da)){
+                        $digit=$da->digit+1;
+                    }else{
+                      $digit=1;
+                    }
 
           $ip = $this->input->ip_address();
           date_default_timezone_set("Asia/Calcutta");
@@ -153,7 +160,7 @@ public function add_assignment(){
          if($typ==1){
 
   $data_insert = array('student'=>$student,
-            'digit'=>$das,
+            'digit'=>$digit,
             'assignment_name'=>$assignment,
             'deadline_date' =>$deadline_date,
 
@@ -178,9 +185,15 @@ public function add_assignment(){
   if($typ==2){
 
         $idw=base64_decode($iw);
+        $this->db->select('*');
+                        $this->db->from('tbl_assignment');
+                        $this->db->where('id', $idw);
+                        $pro_data= $this->db->get()->row();
+                        if (empty($nnnn)) {
+                            $nnnn=$pro_data->image;
+                        }
 
    $data_insert = array('student'=>$student,
-          'digit'=>$das,
           'assignment_name'=>$assignment,
           'deadline_date' =>$deadline_date,
 
@@ -899,5 +912,36 @@ $this->session->set_flashdata('emessage','Please insert some data, No data avail
                                      }
 
                                      }
+         public function view_due_assignment(){
+
+          if(!empty($this->session->userdata('admin_data'))){
+
+
+            $data['user_name']=$this->load->get_var('user_name');
+
+                                                        // echo SITE_NAME;
+                                                        // echo $this->session->userdata('image');
+                                                        // echo $this->session->userdata('position');
+                                                        // exit;
+	$fu_date = date('Y-m-d', strtotime('+'.DUE_DAYS.' days'));
+                $this->db->select('*');
+              $this->db->from('tbl_assignment');
+            $this->db->where('deadline_date',$fu_date);
+            $this->db->where('is_active',0);
+            $data['deadline_date']= $this->db->get();
+
+          $this->load->view('admin/common/header_view',$data);
+          $this->load->view('admin/assignment/view_due_assignment');
+          $this->load->view('admin/common/footer_view');
+
+                                                    }
+          else{
+
+         redirect("login/admin_login","refresh");
+                          }
+
                                    }
-//////start sumbit date}
+
+
+                                   }
+//////start sumbit date

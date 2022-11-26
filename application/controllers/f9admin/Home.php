@@ -21,6 +21,9 @@ function __construct()
 
 					// code...
 
+
+
+
 				$this->db->select('*');
 				$this->db->from('tbl_assignment');
 
@@ -41,6 +44,12 @@ function __construct()
 
 			$data['team2']=$b;
 
+			$this->db->select('*');
+			$this->db->from('tbl_assignment');
+
+			$this->db->where('is_active',1);
+			$d= $this->db->count_all_results();
+			$data['ten']= $d;
 
 
 
@@ -49,12 +58,17 @@ function __construct()
 			$c= $this->db->count_all_results();
 			$data['teams']= $c;
 
-			$fu_date = date('Y-m-d', strtotime('+2 days'));
+			$fu_date = date('Y-m-d', strtotime('+'.DUE_DAYS.' days'));
 			$this->db->select('*');
 			$this->db->from('tbl_assignment');
 			$this->db->where('deadline_date',$fu_date);
 			$this->db->where('is_active',0);
 			$data['deadline_date']= $this->db->get();
+			$this->db->select('*');
+			$this->db->from('tbl_assignment');
+			$this->db->where('deadline_date',$fu_date);
+			$this->db->where('is_active',0);
+			$data['deadline_count']= $this->db->count_all_results();
 
 
 			$this->load->view('admin/common/header_view',$data);
