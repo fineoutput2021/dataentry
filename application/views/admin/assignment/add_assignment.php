@@ -93,7 +93,7 @@
                     <tr>
                       <td> <strong>Pending Amount</strong> <span style="color:red;">*</span></strong> </td>
                       <td>
-                        <input type="text"  id="pending"  onkeypress="return isNumberKey(event)" name="pending" class="form-control" placeholder="" required value="" />
+                        <input type="text" readonly  id="pending"  onkeypress="return isNumberKey(event)" name="pending" class="form-control" placeholder="" required value="" />
                       </td>
                     </tr>
 
@@ -139,15 +139,12 @@
 <script type="text/javascript" src="<?php echo base_url() ?>assets/slider/ajaxupload.3.5.js"></script>
 <link href="<? echo base_url() ?>assets/cowadmin/css/jqvmap.css" rel='stylesheet' type='text/css' />
 <script>
-  $('#total,#paid,#pending').keyup(function() {
+  $('#total,#paid').keyup(function() {
 var total = $("#total").val();
 var paid = $("#paid").val();
-var pending = $("#pending").val();
-alert(total)
-alert(paid)
-alert(pending)
+if(paid!==''){
 $('#pending').val(total-paid);
-$('#paid').val(total-pending);
+}
 });
 function isNumberKey(evt){
 var charCode = (evt.which) ? evt.which : evt.keyCode
