@@ -75,21 +75,21 @@
                     <tr>
                       <td> <strong>Total Amount</strong> <span style="color:red;">*</span></strong> </td>
                       <td>
-                        <input type="text" onkeypress="return isNumberKey(event)" name="total_amount" class="form-control" placeholder="" required value="<?= $assignment->total_amount ?>" />
+                        <input type="text" id="total" onkeypress="return isNumberKey(event)" name="total_amount" class="form-control" placeholder="" required value="<?= $assignment->total_amount ?>" />
                       </td>
                     </tr>
 
                     <tr>
                       <td> <strong>Paid Amount</strong> <span style="color:red;">*</span></strong> </td>
                       <td>
-                        <input type="text" onkeypress="return isNumberKey(event)" name="paid" class="form-control" placeholder="" required value="<?= $assignment->paid_amount ?>" />
+                        <input type="text" id="paid"  onkeypress="return isNumberKey(event)" name="paid" class="form-control" placeholder="" required value="<?= $assignment->paid_amount ?>" />
                       </td>
                     </tr>
 
                     <tr>
                       <td> <strong>Pending Amount</strong> <span style="color:red;">*</span></strong> </td>
                       <td>
-                        <input type="text" onkeypress="return isNumberKey(event)" name="pending" class="form-control" placeholder="" required value="<?= $assignment->pending_amount ?>" />
+                        <input type="text" id="pending" onkeypress="return isNumberKey(event)" name="pending" class="form-control" placeholder="" required value="<?= $assignment->pending_amount ?>" />
                       </td>
                     </tr>
 
@@ -130,6 +130,13 @@
 <script type="text/javascript" src="<?php echo base_url() ?>assets/slider/ajaxupload.3.5.js"></script>
 <link href="<? echo base_url() ?>assets/cowadmin/css/jqvmap.css" rel='stylesheet' type='text/css' />
 <script>
+    $('#total,#paid,#pending').keyup(function() {
+var total = $("#total").val();
+var paid = $("#paid").val();
+var pending = $("#pending").val();
+$('#pending').val(total-paid);
+$('#paid').val(total-pending);
+});
 function isNumberKey(evt){
 var charCode = (evt.which) ? evt.which : evt.keyCode
 if (charCode > 31 && (charCode < 48 || charCode > 57))
