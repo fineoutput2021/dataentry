@@ -46,10 +46,15 @@ function __construct()
 
 			$this->db->select('*');
 			$this->db->from('tbl_assignment');
-
 			$this->db->where('is_active',1);
 			$d= $this->db->count_all_results();
 			$data['ten']= $d;
+
+			$this->db->select('*');
+			$this->db->from('tbl_assignment');
+			$this->db->where('is_active',0);
+			$d2= $this->db->count_all_results();
+			$data['pending']= $d2;
 
 
 

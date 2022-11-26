@@ -33,7 +33,7 @@
               <div class="info-box">
                 <span class="info-box-icon bg-aqua"><i class="fa fa-user"></i></span>
                 <div class="info-box-content">
-                  <span class="info-box-text">Total Student</span>
+                  <span class="info-box-text">Total Students</span>
                   <span class="info-box-number">
 <?
 echo $team2;
@@ -49,10 +49,25 @@ echo $team2;
               <div class="info-box">
                 <span class="info-box-icon bg-red"><i class="fa fa-file"></i></span>
                 <div class="info-box-content">
-                  <span class="info-box-text">Total Assigment</span>
+                  <span class="info-box-text">Total Assigments</span>
                   <span class="info-box-number">
                     <?
                     echo $tyy;
+
+                    ?>
+                  </span>
+                </div><!-- /.info-box-content -->
+              </div><!-- /.info-box -->
+            </div><!-- /.col -->
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <!-- Info boxes -->
+              <div class="info-box">
+                <span class="info-box-icon bg-yellow"><i class="fa fa-file"></i></span>
+                <div class="info-box-content">
+                  <span class="info-box-text">Total Pending Assigments</span>
+                  <span class="info-box-number">
+                    <?
+                    echo $pending;
 
                     ?>
                   </span>
@@ -67,7 +82,7 @@ echo $team2;
                           <div class="info-box">
                             <span class="info-box-icon bg-green"><i class="fa fa-user"></i></span>
                             <div class="info-box-content">
-                              <span class="info-box-text">Complete assignment</span>
+                              <span class="info-box-text">Total Complete Assignments</span>
                               <span class="info-box-number">
 
                                 <?
@@ -83,9 +98,9 @@ echo $team2;
             <a href="<?=base_url()?>dcadmin/Assignment/view_due_assignment">
               <div class="col-md-3 col-sm-6 col-xs-12">
               <div class="info-box">
-                <span class="info-box-icon bg-yellow"><i class="fa fa-file"></i></span>
+                <span class="info-box-icon bg-orange"><i class="fa fa-file"></i></span>
                 <div class="info-box-content">
-                  <span class="info-box-text">Due assignment</span>
+                  <span class="info-box-text">Upcoming Due Assignments</span>
                   <span class="info-box-number">
                     <span class="info-box-number">
 <?=$deadline_count?>
@@ -99,7 +114,7 @@ echo $team2;
   <div class="info-box">
     <span class="info-box-icon bg-blue"><i class="fa fa-users"></i></span>
     <div class="info-box-content">
-      <span class="info-box-text">Team</span>
+      <span class="info-box-text">Total Team</span>
       <span class="info-box-number">
         <span class="info-box-number">
 <?
