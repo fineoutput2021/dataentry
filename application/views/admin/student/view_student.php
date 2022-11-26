@@ -2,17 +2,17 @@
         <div class="content-wrapper">
         <section class="content-header">
         <h1>
-          View User
+          View Students
         </h1>
         </section>
         <section class="content">
         <div class="row">
         <div class="col-lg-12">
-        <a class="btn btn-info cticket" href="<?php echo base_url() ?>dcadmin/user/add_user"
-        role="button" style="margin-bottom:12px;"> Add user</a>
+        <a class="btn btn-info cticket" href="<?php echo base_url() ?>dcadmin/Student/add_student"
+        role="button" style="margin-bottom:12px;"> Add Student</a>
         <div class="panel panel-default">
         <div class="panel-heading">
-        <h3 class="panel-title"><i class="fa fa-money fa-fw"></i>View user</h3>
+        <h3 class="panel-title"><i class="fa fa-money fa-fw"></i>View Students</h3>
         </div>
         <div class="panel panel-default">
 
