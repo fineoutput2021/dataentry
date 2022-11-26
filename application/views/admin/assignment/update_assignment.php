@@ -130,12 +130,12 @@
 <script type="text/javascript" src="<?php echo base_url() ?>assets/slider/ajaxupload.3.5.js"></script>
 <link href="<? echo base_url() ?>assets/cowadmin/css/jqvmap.css" rel='stylesheet' type='text/css' />
 <script>
-    $('#total,#paid,#pending').keyup(function() {
+$('#total,#paid').keyup(function() {
 var total = $("#total").val();
 var paid = $("#paid").val();
-var pending = $("#pending").val();
+if(paid!==''){
 $('#pending').val(total-paid);
-$('#paid').val(total-pending);
+}
 });
 function isNumberKey(evt){
 var charCode = (evt.which) ? evt.which : evt.keyCode
