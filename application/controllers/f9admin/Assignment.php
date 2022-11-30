@@ -95,6 +95,7 @@ public function add_assignment(){
         $deadline_date=$this->input->post('deadline_date');
 
         $word=$this->input->post('word');
+          $currency=$this->input->post('currency');
         $total_amount=$this->input->post('total_amount');
         $paid=$this->input->post('paid');
         $pending=$this->input->post('pending');
@@ -165,6 +166,7 @@ public function add_assignment(){
             'deadline_date' =>$deadline_date,
 
             'word_count' =>$word,
+            'currency' =>$currency,
             'total_amount' =>$total_amount,
             'paid_amount' =>$paid,
             'pending_amount' =>$pending,
@@ -198,6 +200,7 @@ public function add_assignment(){
           'deadline_date' =>$deadline_date,
 
           'word_count' =>$word,
+          'currency' =>$currency,
           'total_amount' =>$total_amount,
           'paid_amount' =>$paid,
           'pending_amount' =>$pending,
@@ -475,22 +478,23 @@ public function add_assignment(){
           {
             // print_r($this->input->post());
             // exit;
-            $this->form_validation->set_rules('images', 'images', 'xss_clean');
+            $this->form_validation->set_rules('image', 'image', 'xss_clean');
 
             if($this->form_validation->run()== TRUE)
             {
-              // $images=$this->input->post('images');
+              // $image=$this->input->post('image');
               $this->load->library('upload');
-              $images="";
-                  $img1='images';
+              $image="";
+                  $img1='image';
 
-                    $file_check=($_FILES['images']['error']);
+                    $file_check=($_FILES['image']['error']);
                     if($file_check!=4){
                   	$image_upload_folder = FCPATH . "assets/uploads/team/";
                 						if (!file_exists($image_upload_folder))
                 						{
                 							mkdir($image_upload_folder, DIR_WRITE_MODE, true);
                 						}
+
                 						$new_file_name="team".date("Ymdhms");
                 						$this->upload_config = array(
                 								'upload_path'   => $image_upload_folder,
@@ -510,8 +514,8 @@ public function add_assignment(){
 
                 							$file_info = $this->upload->data();
 
-                							$images = "assets/uploads/team/".$new_file_name.$file_info['file_ext'];
-                							$file_info['new_name']=$images;
+                							$image = "assets/uploads/team/".$new_file_name.$file_info['file_ext'];
+                							$file_info['new_name']=$image;
                 							// $this->step6_model->updateappIconImage($imageNAmePath,$appInfoId);
                 							$nnnn=$file_info['file_name'];
                 							// echo json_encode($file_info);
@@ -525,7 +529,7 @@ public function add_assignment(){
                 $cur_date=date("Y-m-d H:i:s");
 
                 $addedby=$this->session->userdata('admin_id');
-        $data_update = array('image'=>$images,
+        $data_update = array('image'=>$image,
         'is_active'=>1,
 
                   );
@@ -538,9 +542,9 @@ public function add_assignment(){
 
                             if($last_id!=0){
 
-                            $this->session->set_flashdata('smessage','images Update successfully');
+                            $this->session->set_flashdata('smessage','image Update successfully');
 
-                            redirect("dcadmin/assignment/view_complete_assignment","refresh");
+                          redirect("dcadmin/assignment/view_complete_assignment","refresh");
 
 
 
@@ -594,7 +598,7 @@ $this->session->set_flashdata('emessage','Please insert some data, No data avail
 
                                           $this->db->select('*');
                               $this->db->from('tbl_assignment');
-                              //$this->db->where('id',$usr);
+                              $this->db->where('is_active',1);
                               $data['assignment_data']= $this->db->get();
 
                              $this->load->view('admin/common/header_view',$data);
@@ -850,7 +854,7 @@ $this->session->set_flashdata('emessage','Please insert some data, No data avail
 
                           }
 
-                              public function updateimageStatus($idd,$t){
+                              public function updateimagetatus($idd,$t){
 
                                        if(!empty($this->session->userdata('admin_data'))){
 

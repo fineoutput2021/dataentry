@@ -76,8 +76,8 @@ class Student extends CI_finecontrol
       if ($this->input->post()) {
         // print_r($this->input->post());
         // exit;
-        $this->form_validation->set_rules('fname', 'full name', 'required|xss_clean');
-        $this->form_validation->set_rules('mail', 'Email', 'required|xss_clean');
+        $this->form_validation->set_rules('full_name', 'full_name', 'required|xss_clean');
+        $this->form_validation->set_rules('email', 'email', 'required|xss_clean');
         $this->form_validation->set_rules('phone', 'Phone Number', 'required|xss_clean');
         $this->form_validation->set_rules('city', 'City', 'required|xss_clean');
         $this->form_validation->set_rules('state', 'State', 'required|xss_clean');
@@ -86,8 +86,10 @@ class Student extends CI_finecontrol
 
 
         if ($this->form_validation->run() == TRUE) {
-          $fname = $this->input->post('fname');
-          $mail = $this->input->post('mail');
+          $full_name = $this->input->post('full_name');
+
+            $email = $this->input->post('email');
+              $country_code = $this->input->post('country_code');
           $phone = $this->input->post('phone');
           $city = $this->input->post('city');
           $state = $this->input->post('state');
@@ -104,8 +106,9 @@ class Student extends CI_finecontrol
           if ($typ == 1) {
 
             $data_insert = array(
-              'full_name' => $fname,
-              'email' => $mail,
+              'full_name' => $full_name,
+              'email' => $email,
+              'country_code' => $country_code,
               'phone_number' => $phone,
               'city' => $city,
               'state' => $state,
@@ -139,8 +142,9 @@ class Student extends CI_finecontrol
             //     }
 
             $data_insert = array(
-              'full_name' => $fname,
-              'email' => $mail,
+              'full_name' => $full_name,
+              'email' => $email,
+              'country_code' => $country_code,
               'phone_number' => $phone,
               'city' => $city,
               'state' => $state,
