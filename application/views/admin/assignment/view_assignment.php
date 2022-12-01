@@ -92,9 +92,10 @@ $this->db->select('*');
 
       <td><?php echo $data->deadline_date ?></td>
       <td><?php echo $data->word_count ?></td>
-      <td> ₹<?php echo $data->total_amount ?></td>
-      <td> ₹<?php echo $data->paid_amount ?></td>
-      <td> ₹<?php echo $data->pending_amount ?></td>
+      <td><?php echo $data->currency ?><?php echo $data->total_amount ?></td>
+        <td><?php echo $data->currency ?><?php echo $data->paid_amount ?></td>
+      <td><?php echo $data->currency ?><?php echo $data->pending_amount ?></td>
+
       <td>
                 <?php if($data->image!=""){  ?>
   <img id="slide_img_path" height=50 width=100  src="<?php echo base_url()."".$data->image ?>" >
