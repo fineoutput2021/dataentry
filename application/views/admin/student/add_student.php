@@ -288,28 +288,25 @@
                     <tr>
                       <td> <strong>City</strong> <span style="color:red;">*</span></strong> </td>
                       <td>
-                        <input type="text" name="city" class="form-control" placeholder="" required value="" />
+          <input type="text" name="city" class="form-control" placeholder="" required value="" />
                       </td>
                     </tr>
 
                     <tr>
-                      <td> <strong>State</strong> <span style="color:red;">*</span></strong> </td>
+          <td> <strong>State</strong> <span style="color:red;">*</span></strong> </td>
                       <td>
-                        <input type="text" name="state" class="form-control" placeholder="" required value="" />
+          <input type="text" name="state" class="form-control" placeholder="" required value="" />
                       </td>
                     </tr>
 
 
                     <tr>
-                      <td> <strong>country</strong> <span style="color:red;">*</span></strong> </td>
+        <td> <strong>country</strong> <span style="color:red;">*</span></strong> </td>
                       <td>
 
-                            <select class="form-control" name="country">
-                              <option value="">Select Name</option>
-<option value="india">india</option>
+      <input type="text" name="Country" class="form-control" placeholder="" required value="" />
+                        </td>
 
-
-                      </td>
                     </tr>
 
 

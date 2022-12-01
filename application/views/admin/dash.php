@@ -60,7 +60,7 @@ echo $team2;
               </div><!-- /.info-box -->
             </div><!-- /.col -->
             <div class="col-md-3 col-sm-6 col-xs-12">
-                <!-- Info boxes -->
+                <a href="<?=base_url()?>dcadmin/Assignment/view_assignment">
               <div class="info-box">
                 <span class="info-box-icon bg-yellow"><i class="fa fa-file"></i></span>
                 <div class="info-box-content">
@@ -95,8 +95,9 @@ echo $team2;
             </div><!-- /.col -->
             <div class="clearfix visible-sm-block"></div>
 
-            <a href="<?=base_url()?>dcadmin/Assignment/view_due_assignment">
+
               <div class="col-md-3 col-sm-6 col-xs-12">
+                  <a href="<?=base_url()?>dcadmin/Assignment/view_due_assignment">
               <div class="info-box">
                 <span class="info-box-icon bg-orange"><i class="fa fa-file"></i></span>
                 <div class="info-box-content">
@@ -109,7 +110,7 @@ echo $team2;
 </div><!-- /.info-box -->
 </div>
 <div class="clearfix visible-sm-block"></div>
-<!-- Info boxes -->
+  <a href="<?=base_url()?>dcadmin/system/view_team">
 <div class="col-md-3 col-sm-6 col-xs-12">
   <div class="info-box">
     <span class="info-box-icon bg-blue"><i class="fa fa-users"></i></span>

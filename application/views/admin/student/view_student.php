@@ -45,7 +45,7 @@
    <th>Country</th>
 <th>City</th>
 <th>state</th>
-<th>Country</th>
+<!-- <th>Country</th> -->
         <th>Status</th>
         <th>Action</th>
         </tr>
@@ -56,9 +56,9 @@
         <td><?php echo $i ?> </td>
 
  	 <td><?php echo $data->full_name ?></td>
- 	 <td><?php echo $data->phone_number ?></td>
+ 	 <td>+<?php echo $data->country_code."-".$data->phone_number ?></td>
  	 <td><?php echo $data->email ?></td>
-   <td>+<?php echo $data->country_code ?></td>
+   <!-- <td>+<?php echo $data->country_code ?></td> -->
    <td><?php echo $data->city ?></td>
    <td><?php echo $data->state ?></td>
    <td><?php echo $data->country ?></td>
