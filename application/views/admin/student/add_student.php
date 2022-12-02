@@ -52,7 +52,7 @@
 										</tr>
 
 										<tr>
-											<td> <strong>email</strong> <span style="color:red;">*</span></strong> </td>
+											<td> <strong>Email</strong> <span style="color:red;">*</span></strong> </td>
 											<td>
 												<input type="email" name="email" class="form-control" placeholder=""
 													required value="" />
