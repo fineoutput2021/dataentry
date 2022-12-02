@@ -305,7 +305,7 @@
 
 
                     <tr>
-                      <td> <strong>country</strong> <span style="color:red;">*</span></strong> </td>
+                      <td> <strong>Country</strong> <span style="color:red;">*</span></strong> </td>
                       <td>
 
                         <input type="text" name="country" class="form-control" placeholder="" required value="<?= $student->country ?>" />
