@@ -58,7 +58,7 @@
                       </td>
 
                       <td>
-                        <?php echo $data->full_name ?>
+                        <?php echo $data->student ?>
                       </td>
                       <td>+
                         <?php echo $data->country_code . "-" . $data->phone_number ?>

@@ -1,4 +1,6 @@
-<?php ob_start();if (!defined('BASEPATH')) exit('No direct script access allowed');
+<?php ob_start();
+if (!defined('BASEPATH'))
+  exit('No direct script access allowed');
 require_once(APPPATH . 'core/CI_finecontrol.php');
 class Student extends CI_finecontrol
 {
@@ -25,7 +27,7 @@ class Student extends CI_finecontrol
 
       $this->db->select('*');
       $this->db->from('tbl_student');
-      //$this->db->where('id',$usr);
+      $this->db->order_by('id','desc');
       $data['student_data'] = $this->db->get();
 
       $this->load->view('admin/common/header_view', $data);
@@ -64,7 +66,6 @@ class Student extends CI_finecontrol
   //  add student data funncation
 
   public function add_student_data($t, $iw = "")
-
   {
 
     if (!empty($this->session->userdata('admin_data'))) {
@@ -88,8 +89,8 @@ class Student extends CI_finecontrol
         if ($this->form_validation->run() == TRUE) {
           $full_name = $this->input->post('full_name');
 
-            $email = $this->input->post('email');
-              $country_code = $this->input->post('country_code');
+          $email = $this->input->post('email');
+          $country_code = $this->input->post('country_code');
           $phone = $this->input->post('phone');
           $city = $this->input->post('city');
           $state = $this->input->post('state');
@@ -117,6 +118,7 @@ class Student extends CI_finecontrol
               'added_by' => $addedby,
               'is_active' => 1,
               // 'date'=>$cur_date
+
             );
 
             $last_id = $this->base_model->insert_table("tbl_student", $data_insert, 1);
