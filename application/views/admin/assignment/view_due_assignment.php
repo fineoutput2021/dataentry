@@ -40,8 +40,8 @@
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>student</th>
-                            <th>digit</th>
+                            <th>Student</th>
+                            <th>Digit</th>
                             <th>Assignment</th>
 
                             <th>Deadline Date</th>

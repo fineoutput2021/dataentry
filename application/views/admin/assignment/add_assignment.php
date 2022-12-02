@@ -76,7 +76,7 @@
                       </td>
                     </tr>
                     <tr>
-                      <td> <strong>currency</strong> <span style="color:red;">*</span></strong> </td>
+                      <td> <strong>Currency</strong> <span style="color:red;">*</span></strong> </td>
                       <td>
                               <input type="text" name="currency" class="form-control" placeholder="" required value="" />
                       </td>
