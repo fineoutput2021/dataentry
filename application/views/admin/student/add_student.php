@@ -64,7 +64,7 @@
 													style="color:red;">*</span></strong> </td>
 											<td>
 												<select name="country_code" id="" class="form-control">
-													<option data-countryCode="IN" value="+91" Selected>India (+91)
+													<option data-countryCode="IN" value="91" Selected>India (+91)
 													</option>
 													<optgroup label="Other countries">
 														<option data-countryCode="DZ" value="213">Algeria (+213)
