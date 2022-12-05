@@ -102,9 +102,6 @@
                       </td>
                     </tr>
 
-
-                    <tr>
-
                     <tr>
                       <td> <strong>Upload Document</strong> <span style="color:red;">*</span></strong> </td>
                       <td>
