@@ -101,7 +101,6 @@
                         <input type="text" readonly  id="pending"  onkeypress="return isNumberKey(event)" name="pending" class="form-control" placeholder="" required value="" />
                       </td>
                     </tr>
-
                     <tr>
                       <td> <strong>Upload Document</strong> <span style="color:red;">*</span></strong> </td>
                       <td>

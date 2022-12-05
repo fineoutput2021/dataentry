@@ -58,6 +58,7 @@
                           <tbody>
 
                         	<?php $i=1; foreach($assignment_data->result() as $data) {
+                            
                             $numlength = strlen((string)$data->digit);
                             if($numlength==1){
                               $digit="000".$data->digit;
@@ -92,9 +93,9 @@ $this->db->select('*');
 
       <td><?php echo $data->deadline_date ?></td>
       <td><?php echo $data->word_count ?></td>
-      <td><?php echo $data->currency ?><?php echo $data->total_amount ?></td>
-        <td><?php echo $data->currency ?><?php echo $data->paid_amount ?></td>
-      <td><?php echo $data->currency ?><?php echo $data->pending_amount ?></td>
+      <td><?php echo $data->total_amount ?> <?php echo $data->currency ?></td>
+        <td><?php echo $data->paid_amount ?> <?php echo $data->currency ?></td>
+      <td><?php echo $data->pending_amount ?> <?php echo $data->currency ?></td>
 
       <td>
                 <?php if($data->image!=""){  ?>
