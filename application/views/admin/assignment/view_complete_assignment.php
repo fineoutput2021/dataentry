@@ -65,7 +65,7 @@
                                   $digit=$data->digit;
                               }
                                ?>
-  <tr>
+                               <tr>
       <td><?php echo $i ?> </td>
       <td><?
 $id=$data->student;

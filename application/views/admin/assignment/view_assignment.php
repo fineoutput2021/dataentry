@@ -104,8 +104,6 @@ $this->db->select('*');
             Sorry No image Found
             <?php } ?>
               </td>
-
-
                   <td><?php if($data->is_active==0){ ?>
               <p class="label bg-yellow" >pending</p>
 
